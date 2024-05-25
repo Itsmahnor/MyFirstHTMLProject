@@ -1,0 +1,122 @@
+body{
+    background-color: rgba(0,0,0,0.9);
+    margin:0;
+     color:white; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.showcase::after{
+    content: '';
+    background-image:url(showcase1.jpg);
+    height: 100vh;
+    width: 100%;
+   
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: block;
+    filter:blur(10px);
+    -webkit-filter: blur(10px);
+    transition: all 1000ms;
+   
+}
+
+.showcase:hover::after{
+    filter:blur(0px);
+    -webkit-filter: blur(0px);
+}
+.showcase:hover .content{
+    filter:blur(2px);
+    -webkit-filter: blur(2px);
+
+}
+.content{
+position: absolute;
+z-index: 1;
+top:10%;
+left:50%;
+margin-top:105px;
+margin-left: -145px;
+width:300px;
+height:350px;
+text-align: center;
+transition:all 1000ms;
+}
+
+.content .logo{
+height: 180px;
+width: 180px
+}
+.content .text{
+line-height: 1.7;
+margin-top: 1rem;
+}
+.content .title{
+    font-size: 2.2rem;
+    margin-top: 1rem;
+}
+.container{
+    max-width: 960px;
+    margin: auto;
+    padding:28px;
+    overflow: hidden;
+}
+.grid-3{
+    margin: auto;
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.grid-2{
+   margin: 50px 50px;
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.center{
+    text-align: center;
+    margin: auto;
+}
+.bg-light{
+    background-color: white;
+    color: black;
+}
+.bg-dark{
+    background-color: black;
+    color: white;
+}
+footer{
+    padding: 2.2rem;
+
+}
+footer p{
+    margin: 0;
+}
+@media(max-width: 560px) {
+    .showcase::after{
+        height: 50vh;
+    }
+    .content{
+        top: 5%;
+        margin-top: 5px;
+    }
+    .content .logo{
+        height: 120px;
+        weight: 120px
+    }
+    .content .text{
+        display: none;
+    }
+    .grid-3,.grid-2{
+        grid-template-columns: 1fr;
+    }
+    .services div{
+        border-bottom: black dashed 1px;
+    }
+}
+/* landscape */
+@media(max-width:500px){
+    .content .text,.content .title{
+        display: none;
+    } 
+}
